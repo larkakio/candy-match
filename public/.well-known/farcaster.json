@@ -18,8 +18,8 @@
     "tags": ["puzzle", "match3", "casual", "web3", "nft"],
     "heroImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
     "tagline": "Match candies and win!",
-    "ogTitle": "Candy Match - Match-3 Puzzle Game",
-    "ogDescription": "Addictive match-3 puzzle game. Match candies and win!",
+    "ogTitle": "Candy Match",
+    "ogDescription": "Match-3 puzzle game",
     "ogImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png"
   }
 }
