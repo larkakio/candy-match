@@ -6,7 +6,7 @@ import { Providers } from './providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://candy-match-alpha.vercel.app'),
   title: 'Candy Match - Match-3 Puzzle Game',
   description: 'Addictive match-3 puzzle game on Base. Match colorful candies, create combos, and earn NFT rewards!',
   keywords: ['soap cutting', 'ASMR', 'game', 'Base', 'Web3', 'NFT'],

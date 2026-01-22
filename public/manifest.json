@@ -1,7 +1,7 @@
 {
-  "name": "Slice & Shine",
-  "short_name": "Slice & Shine",
-  "description": "ASMR Soap Cutting Game on Base",
+  "name": "Candy Match",
+  "short_name": "Candy Match",
+  "description": "Match-3 Puzzle Game on Base",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1a1a1a",
