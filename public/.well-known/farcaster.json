@@ -13,13 +13,15 @@
     "splashBackgroundColor": "#1a1a1a",
     "subtitle": "Match-3 Puzzle Game",
     "description": "Addictive match-3 puzzle game on Base. Match colorful candies, create amazing combos, and unlock NFT rewards. Perfect for puzzle game lovers!",
-    "screenshotUrls": [],
+    "screenshotUrls": ["https://candy-match-alpha.vercel.app/hero-image.png"],
     "primaryCategory": "games",
     "tags": ["puzzle", "match3", "casual", "web3", "nft"],
     "heroImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
     "tagline": "Match candies and win!",
     "ogTitle": "Candy Match",
     "ogDescription": "Match-3 puzzle game",
-    "ogImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png"
+    "ogImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
+    "webhookUrl": "https://candy-match-alpha.vercel.app/api/webhook",
+    "noindex": false
   }
 }
