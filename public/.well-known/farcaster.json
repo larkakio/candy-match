@@ -1,14 +1,25 @@
 {
-  "version": "1",
-  "name": "Candy Match",
-  "description": "Addictive match-3 puzzle game on Base. Match colorful candies, create amazing combos, and unlock NFT rewards. Perfect for puzzle game lovers!",
-  "iconUrl": "https://candy-match-alpha.vercel.app/icon.png",
-  "imageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
-  "splashImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
-  "splashBackgroundColor": "#1a1a1a",
-  "homeUrl": "https://candy-match-alpha.vercel.app/",
-  "canonicalDomain": "candy-match-alpha.vercel.app",
-  "primaryCategory": "games",
-  "tags": ["puzzle", "match3", "casual", "web3", "nft"],
-  "requiredChains": ["eip155:8453"]
+  "accountAssociation": {
+    "header": "eyJmaWQiOjI0MTg2NjEsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhGMjhFMjQ5MjQ4NTVCNzQ4MTNDYTdmOTNiMjI3MTMyREM1QzY2NUU0In0",
+    "payload": "eyJkb21haW4iOiJjYW5keS1tYXRjaC1hbHBoYS52ZXJjZWwuYXBwIn0",
+    "signature": "4pnblYp4B89gi32BG7PHhEhXHqMHR1ja0oS0juAQFbMLTYPTJjeOT4dSHXsFCJ13ZpvLsuIkSOZj7ZRhlnp0HBs="
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Candy Match",
+    "homeUrl": "https://candy-match-alpha.vercel.app/",
+    "iconUrl": "https://candy-match-alpha.vercel.app/icon.png",
+    "splashImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
+    "splashBackgroundColor": "#1a1a1a",
+    "subtitle": "Match-3 Puzzle Game",
+    "description": "Addictive match-3 puzzle game on Base. Match colorful candies, create amazing combos, and unlock NFT rewards. Perfect for puzzle game lovers!",
+    "screenshotUrls": [],
+    "primaryCategory": "games",
+    "tags": ["puzzle", "match3", "casual", "web3", "nft"],
+    "heroImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
+    "tagline": "Match candies and win!",
+    "ogTitle": "Candy Match - Match-3 Puzzle Game",
+    "ogDescription": "Addictive match-3 puzzle game. Match candies and win!",
+    "ogImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png"
+  }
 }
