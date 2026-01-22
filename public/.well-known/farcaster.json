@@ -13,8 +13,8 @@
   "requiredChains": ["eip155:8453"],
   "frame": {
     "version": "1",
-    "name": "Slice & Shine",
-    "description": "Relaxing ASMR soap cutting game on Base. Slice through colorful layered soaps, earn points, and unlock NFT rewards. Perfect for satisfying game lovers!",
+    "name": "Candy Match",
+    "description": "Addictive match-3 puzzle game on Base. Match colorful candies, create amazing combos, and unlock NFT rewards. Perfect for puzzle game lovers!",
     "iconUrl": "https://YOUR_DOMAIN/icon.png",
     "imageUrl": "https://YOUR_DOMAIN/hero-image.png",
     "splashImageUrl": "https://YOUR_DOMAIN/hero-image.png",
