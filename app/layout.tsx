@@ -20,6 +20,18 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'fc:frame': 'vNext',
     'fc:frame:image': process.env.NEXT_PUBLIC_APP_URL ? `${process.env.NEXT_PUBLIC_APP_URL}/icon.png` : '/icon.png',
+    'fc:miniapp': JSON.stringify({
+      version: 'next',
+      imageUrl: process.env.NEXT_PUBLIC_APP_URL ? `${process.env.NEXT_PUBLIC_APP_URL}/hero-image.png` : '/hero-image.png',
+      button: {
+        title: 'Play Now',
+        action: {
+          type: 'launch_miniapp',
+          name: 'Candy Match',
+          url: process.env.NEXT_PUBLIC_APP_URL || 'https://candy-match-alpha.vercel.app'
+        }
+      }
+    }),
     'base:app_id': '697261b988e3bac59cf3d3c2',
   },
   
