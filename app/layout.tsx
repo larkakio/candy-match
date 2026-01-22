@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'fc:frame': 'vNext',
     'fc:frame:image': process.env.NEXT_PUBLIC_APP_URL ? `${process.env.NEXT_PUBLIC_APP_URL}/icon.png` : '/icon.png',
+    'base:app_id': '697261b988e3bac59cf3d3c2',
   },
   
   // Open Graph
