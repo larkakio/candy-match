@@ -5,36 +5,37 @@ import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const FC_EMBED = {
+  version: '1',
+  imageUrl: 'https://candy-match-alpha.vercel.app/hero-image.png',
+  button: {
+    title: 'Play Now',
+    action: {
+      type: 'launch_frame' as const,
+      name: 'Candy Match',
+      url: 'https://candy-match-alpha.vercel.app/',
+      splashImageUrl: 'https://candy-match-alpha.vercel.app/hero-image.png',
+      splashBackgroundColor: '#1a1a1a',
+    },
+  },
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://candy-match-alpha.vercel.app'),
   title: 'Candy Match - Match-3 Puzzle Game',
   description: 'Addictive match-3 puzzle game on Base. Match colorful candies, create combos, and earn NFT rewards!',
   keywords: ['soap cutting', 'ASMR', 'game', 'Base', 'Web3', 'NFT'],
   
-  // Base App / Farcaster Frame & Mini App meta tags (absolute URLs for crawlers)
+  // Farcaster Mini App Embed: fc:miniapp + fc:frame (same JSON per spec)
+  // Spec: version "1", action.type "launch_frame" — https://miniapps.farcaster.xyz/docs/specification
   other: {
     'viewport': 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover',
     'theme-color': '#FF69B4',
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
-    'fc:frame': 'vNext',
-    'fc:frame:image': 'https://candy-match-alpha.vercel.app/hero-image.png',
-    'fc:frame:button:1': 'Play Now',
-    'fc:frame:button:1:action': 'link',
-    'fc:frame:button:1:target': 'https://candy-match-alpha.vercel.app/',
-    'fc:miniapp': JSON.stringify({
-      version: 'next',
-      imageUrl: 'https://candy-match-alpha.vercel.app/hero-image.png',
-      button: {
-        title: 'Play Now',
-        action: {
-          type: 'launch_miniapp',
-          name: 'Candy Match',
-          url: 'https://candy-match-alpha.vercel.app'
-        }
-      }
-    }),
+    'fc:miniapp': JSON.stringify(FC_EMBED),
+    'fc:frame': JSON.stringify(FC_EMBED),
     'base:app_id': '697261b988e3bac59cf3d3c2',
   },
   

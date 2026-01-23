@@ -9,6 +9,8 @@
     "name": "Candy Match",
     "homeUrl": "https://candy-match-alpha.vercel.app/",
     "iconUrl": "https://candy-match-alpha.vercel.app/icon.png",
+    "imageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
+    "buttonTitle": "Play Now",
     "splashImageUrl": "https://candy-match-alpha.vercel.app/hero-image.png",
     "splashBackgroundColor": "#1a1a1a",
     "subtitle": "Match-3 Puzzle Game",
