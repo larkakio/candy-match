@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { GameProvider } from '@/context/GameContext'
+import { FarcasterReady } from '@/components/FarcasterReady'
 import { MainMenu } from '@/components/Menu/MainMenu'
 import { LevelSelect } from '@/components/Menu/LevelSelect'
 import { Settings } from '@/components/Menu/Settings'
@@ -43,6 +44,7 @@ function GameContent() {
 export default function Home() {
   return (
     <GameProvider>
+      <FarcasterReady />
       <GameContent />
     </GameProvider>
   )

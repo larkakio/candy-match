@@ -12,6 +12,7 @@ const nextConfig = {
       'pino-pretty': false,
       canvas: false,
       gl: false,
+      encoding: false, // node-fetch (via @solana/web3 -> @farcaster/miniapp-sdk) — не потрібен у браузері
     }
 
     // Виключаємо проблемні модулі з серверного бандлу (якщо потрібно)

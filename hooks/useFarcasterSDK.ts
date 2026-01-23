@@ -1,58 +1,39 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 
-interface FarcasterSDK {
-  context: {
-    user?: {
-      fid: number
-      username: string
-      displayName: string
-      pfpUrl: string
-    }
-  }
-  actions: {
-    ready: () => void
-    openUrl: (url: string) => void
-    close: () => void
-  }
-}
+// Сумісно з UserContext з @farcaster/miniapp-core (username, displayName, pfpUrl — optional)
+type User = { fid: number; username?: string; displayName?: string; pfpUrl?: string }
+type SDKActions = { actions: { openUrl: (u: string) => void; close: () => void } }
 
 export function useFarcasterSDK() {
-  const [sdk, setSDK] = useState<FarcasterSDK | null>(null)
-  const [isReady, setIsReady] = useState(false)
+  const [sdk, setSdk] = useState<SDKActions | null>(null)
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
-    // Farcaster SDK інжектиться автоматично клієнтами (Warpcast, тощо)
-    const farcasterSDK = (window as any).farcaster as FarcasterSDK | undefined
-
-    if (farcasterSDK) {
-      setSDK(farcasterSDK)
-      // Сигналізуємо що додаток готовий
-      farcasterSDK.actions.ready()
-      setIsReady(true)
-    } else {
-      // Fallback для звичайного браузера
-      console.log('Running outside Farcaster context')
-      setIsReady(true)
-    }
+    import('@farcaster/miniapp-sdk').then((m) => {
+      setSdk({ actions: m.sdk.actions })
+      m.sdk.context.then((ctx) => setUser(ctx.user)).catch(() => {})
+    }).catch(() => {})
   }, [])
 
   return {
     sdk,
-    isReady,
-    user: sdk?.context?.user,
-    // Helper функції
+    isReady: true,
+    user,
     openUrl: (url: string) => {
-      if (sdk) {
-        // Використовуємо SDK для навігації всередині додатку
-        sdk.actions.openUrl(url)
-      } else {
-        // Fallback для браузера
+      try {
+        if (sdk?.actions?.openUrl) sdk.actions.openUrl(url)
+        else window.open(url, '_blank')
+      } catch {
         window.open(url, '_blank')
       }
     },
     close: () => {
-      if (sdk) {
-        sdk.actions.close()
+      try {
+        sdk?.actions?.close?.() ?? window.close()
+      } catch {
+        window.close()
       }
     },
   }
