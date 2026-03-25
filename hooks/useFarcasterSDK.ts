@@ -1,40 +1,33 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
+import { useAccount } from "wagmi";
 
-// Сумісно з UserContext з @farcaster/miniapp-core (username, displayName, pfpUrl — optional)
-type User = { fid: number; username?: string; displayName?: string; pfpUrl?: string }
-type SDKActions = { actions: { openUrl: (u: string) => void; close: () => void } }
+type User = {
+  fid: number;
+  username?: string;
+  displayName?: string;
+  pfpUrl?: string;
+};
+type SDKActions = {
+  actions: { openUrl: (u: string) => void; close: () => void };
+} | null;
 
 export function useFarcasterSDK() {
-  const [sdk, setSdk] = useState<SDKActions | null>(null)
-  const [user, setUser] = useState<User | null>(null)
-
-  useEffect(() => {
-    import('@farcaster/miniapp-sdk').then((m) => {
-      setSdk({ actions: m.sdk.actions })
-      m.sdk.context.then((ctx) => setUser(ctx.user)).catch(() => {})
-    }).catch(() => {})
-  }, [])
+  const { address } = useAccount();
+  const user: User | null = address
+    ? {
+        fid: 0,
+        displayName: `${address.slice(0, 6)}…${address.slice(-4)}`,
+      }
+    : null;
 
   return {
-    sdk,
+    sdk: null as SDKActions,
     isReady: true,
     user,
     openUrl: (url: string) => {
-      try {
-        if (sdk?.actions?.openUrl) sdk.actions.openUrl(url)
-        else window.open(url, '_blank')
-      } catch {
-        window.open(url, '_blank')
-      }
+      window.open(url, "_blank", "noopener,noreferrer");
     },
-    close: () => {
-      try {
-        sdk?.actions?.close?.() ?? window.close()
-      } catch {
-        window.close()
-      }
-    },
-  }
+    close: () => {},
+  };
 }
